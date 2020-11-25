@@ -1,13 +1,13 @@
 export const dark = {
   colors: {
     titleColor: "black",
-    bgColor: "blue",
+    bgColor: "white",
   },
 };
 
 export const light = {
   colors: {
-    titleColor: "#blue",
+    titleColor: "white",
     bgColor: "black",
   },
 };
