@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled, { ThemeProvider } from "styled-components";
 
 function App() {
+  const theme = {
+    colors: {
+      bgColor: "black",
+    },
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <S.Main>
+        <button>모드 전환</button>
+      </S.Main>
+    </ThemeProvider>
   );
 }
 
 export default App;
+
+const S = {};
+S.Main = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: ${(props) =>
+    props.theme.colors.bgColor}; //props.theme를 통해 값을 받는다
+`;
